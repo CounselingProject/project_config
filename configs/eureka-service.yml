@@ -12,4 +12,4 @@ eureka:
         - http://${eureka.instance.hostname}:${server.port}/eureka/
 
   server:
-    waitTimeInMsWhenSyncEmpty: 30000 # 30초에 한번식 인스턴스 검색1111
+    waitTimeInMsWhenSyncEmpty: 30000 # 30초에 한번식 인스턴스 검색
