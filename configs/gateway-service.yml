@@ -26,19 +26,19 @@ spring:
           filters:
             - RewritePath=/api/v1/member/?(?<path>.*),/$\{path}
 
+        - id: file-service
+          uri: lb://file-service
+          predicates:
+            - Path=/api/v1/file/**
+          filters:
+            - RewritePath=/api/v1/file/?(?<path>.*),/$\{path}
+
         - id: test-service
           uri: lb://test-service
           predicates:
             - Path=/api/v1/test/**
           filters:
             - RewritePath=/api/v1/test/(?<path>.*), /${path}
-
-        - id: mypage-service
-          uri: lb://mypage-service
-          predicates:
-            - Path=/api/v1/mypage/**
-          filters:
-            - RewritePath=/api/v1/mypage/(?<path>.*), /${path}
 
         - id: board-service
           uri: lb://board-service
