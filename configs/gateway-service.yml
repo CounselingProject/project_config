@@ -26,6 +26,34 @@ spring:
           filters:
             - RewritePath=/api/v1/member/?(?<path>.*),/$\{path}
 
+        - id: test-service
+          uri: lb://test-service
+          predicates:
+            - Path=/api/v1/test/**
+          filters:
+            - RewritePath=/api/v1/test/(?<path>.*), /${path}
+
+        - id: mypage-service
+          uri: lb://mypage-service
+          predicates:
+            - Path=/api/v1/mypage/**
+          filters:
+            - RewritePath=/api/v1/mypage/(?<path>.*), /${path}
+
+        - id: board-service
+          uri: lb://board-service
+          predicates:
+            - Path=/api/v1/board/**
+          filters:
+            - RewritePath=/api/v1/board/(?<path>.*), /${path}
+
+        - id: counseling-service
+          uri: lb://counseling-service
+          predicates:
+            - Path=/api/v1/counseling/**
+          filters:
+            - RewritePath=/api/v1/counseling/(?<path>.*), /${path}
+
 # 유레카 설정
 eureka:
   instance:
