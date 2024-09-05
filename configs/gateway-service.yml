@@ -36,7 +36,7 @@ spring:
         - id: psychologicalTest-service
           uri: lb://psychologicalTest-service
           predicates:
-            - Path=/api/v1/test/**
+            - Path=/api/v1/psychologicalTest/**
           filters:
             - RewritePath=/api/v1/psychologicalTest/(?<path>.*), /${path}
 
