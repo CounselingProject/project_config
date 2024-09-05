@@ -33,12 +33,12 @@ spring:
           filters:
             - RewritePath=/api/v1/file/?(?<path>.*),/$\{path}
 
-        - id: test-service
-          uri: lb://test-service
+        - id: psychologicalTest-service
+          uri: lb://psychologicalTest-service
           predicates:
             - Path=/api/v1/test/**
           filters:
-            - RewritePath=/api/v1/test/(?<path>.*), /${path}
+            - RewritePath=/api/v1/psychologicalTest/(?<path>.*), /${path}
 
         - id: board-service
           uri: lb://board-service
