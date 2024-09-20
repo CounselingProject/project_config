@@ -40,21 +40,21 @@ spring:
           predicates:
             - Path=/api/v1/psychologicalTest/**
           filters:
-            - RewritePath=/api/v1/psychologicalTest/(?<path>.*), /${path}
+            - RewritePath=/api/v1/psychologicalTest/(?<path>.*), /$\{path}
 
         - id: board-service
           uri: lb://board-service
           predicates:
             - Path=/api/v1/board/**
           filters:
-            - RewritePath=/api/v1/board/(?<path>.*), /${path}
+            - RewritePath=/api/v1/board/(?<path>.*), /$\{path}
 
         - id: counseling-service
           uri: lb://counseling-service
           predicates:
             - Path=/api/v1/counseling/**
           filters:
-            - RewritePath=/api/v1/counseling/(?<path>.*), /${path}
+            - RewritePath=/api/v1/counseling/(?<path>.*), /$\{path}
 
 # 유레카 설정
 eureka:
