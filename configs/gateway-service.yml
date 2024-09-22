@@ -35,8 +35,8 @@ spring:
           filters:
             - RewritePath=/api/v1/file/?(?<path>.*),/$\{path}
 
-        - id: psychologicalTest-service
-          uri: lb://psychologicalTest-service
+        - id: psychologicaltest-service
+          uri: lb://psychologicaltest-service
           predicates:
             - Path=/api/v1/psychologicalTest/**
           filters:
